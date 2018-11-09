@@ -50,6 +50,7 @@ export default {
               console.log(res.data)
               if (res.data.meta.status === 200) {
                 this.$message.success('登录成功')
+                localStorage.setItem('token', res.data.data.token)
                 this.$router.push({path: '/home'})
               } else {
                 this.$message.error('用户名或密码错误')
