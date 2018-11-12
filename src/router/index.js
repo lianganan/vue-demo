@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/login'
 import Home from '@/components/home'
+import UserList from '@/components/userlist'
 Vue.use(Router)
 
 const router = new Router({
@@ -16,7 +17,13 @@ const router = new Router({
     },
     {
       path: '/home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path: '/userList',
+          component: UserList
+        }
+      ]
     }
   ]
 })
